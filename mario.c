@@ -2,15 +2,15 @@
 #include <stdio.h>
 
 int get_height(void);
-void print_pyramid(int h);
+void print_pyramids(int h);
 
 int main(void)
 {
     // prompt for pyramid size
     int h = get_height();
 
-    // print pyramid
-    print_pyramid(h);
+    // print pyramids
+    print_pyramids(h);
 }
 
 
@@ -31,7 +31,7 @@ int main(void)
 
 
 
-
+// Abstraction for get_height, do while loop and return int
 int get_height(void)
 {
     int height;
@@ -44,8 +44,8 @@ int get_height(void)
 }
 
 
-
-void print_pyramid(int h)
+// Abstraction for print_pyramids, block calculations using for loops
+void print_pyramids(int h)
 {
     int row, block, space;
     for (row = 0; row < h; row++)
@@ -58,7 +58,14 @@ void print_pyramid(int h)
         {
             printf("#");
         }
+        for (space = 0; space < 2; space++)
+        {
+            printf(" ");
+        }
+        for (block =  0; block <= row; block++)
+        {
+            printf("#");
+        }
         printf("\n");
     }
-
 }
